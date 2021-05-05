@@ -3,8 +3,9 @@ import {connect} from 'react-redux';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import MovieList from './components/MovieList';
+import Modal from './components/Modal';
 
-import {setSearchField, requestMovieResults, changeNominated} from './redux/actions';
+import {setSearchField, requestMovieResults, changeNominated, closeBanner} from './redux/actions';
 
 const mapStateToProps = state => {
   return{
@@ -12,7 +13,8 @@ const mapStateToProps = state => {
     isPending: state.requestMovieResults.isPending,
     movieResults: state.requestMovieResults.movieResults,
     nominatedMovies: state.updateNominated.nominatedMovies,
-    nominatedIDs: state.updateNominated.nominatedIDs
+    nominatedIDs: state.updateNominated.nominatedIDs,
+    showBanner: state.updateNominated.showBanner
   }
 }
 
@@ -20,18 +22,16 @@ const mapDispatchToProps = (dispatch) => {
   return{
     onSearchChange: (e) => dispatch(setSearchField(e.target.value)),
     onRequestMovieResults: (e) => dispatch(requestMovieResults(e, e.target.value)),
-    onClickButton: (e) => dispatch(changeNominated(e))
+    onClickButton: (e) => dispatch(changeNominated(e)),
+    onCloseModal: () => dispatch(closeBanner())
   }
 }
 class App extends Component {
 
-  constructor(){
-    super();
-  }
-
   render(){
-    const {onSearchChange, onRequestMovieResults, onClickButton} = this.props;
-    const {searchField, isPending, movieResults, nominatedMovies, nominatedIDs} = this.props;
+    const {onSearchChange, onRequestMovieResults, onClickButton, onCloseModal} = this.props;
+    const {searchField, isPending, movieResults, nominatedMovies, nominatedIDs, showBanner} = this.props;
+    
 
     let filteredResults = [];
     if(!isPending){
@@ -45,7 +45,10 @@ class App extends Component {
         return movie;
       })
     }
-  
+
+    console.log(showBanner);
+    console.log(nominatedIDs.length);
+
     return (
         <div className='w-100 vh-100 bg-light-gray flex items-center justify-center flex-column'>
           
@@ -60,7 +63,10 @@ class App extends Component {
             <MovieList title={'Results for ' + searchField} movieList={filteredResults} buttonType={'Nominate'} buttonPress={onClickButton}/>
             <MovieList title={'Nominated Movies'} movieList={nominatedMovies} buttonType={'Remove'} buttonPress={onClickButton}/>
           </div>
-
+          <Modal
+            show={showBanner}
+            hideModal={onCloseModal}
+          />
         </div>
     );
   }

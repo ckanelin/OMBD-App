@@ -4,7 +4,8 @@ import {
     SEARCH_MOVIE_SUCCESS,
     SEARCH_MOVIE_FAIL,
     ADD_NOMINEES,
-    REMOVE_NOMINEES
+    REMOVE_NOMINEES,
+    CLOSE_BANNER
 } from './constants'
 
 const initialSearchState = {
@@ -46,20 +47,28 @@ export const requestMovieResults = (state = initialStateMovieResults, action = {
 
 const initialStateNominated = {
     nominatedMovies: [],
-    nominatedIDs: []
+    nominatedIDs: [],
+    showBanner: false
 }
 
 export const updateNominated = (state = initialStateNominated, action = {}) => {
     switch(action.type){
         case ADD_NOMINEES:
-            return Object.assign({}, state, {nominatedMovies: state.nominatedMovies.concat(action.payload),
-                nominatedIDs: state.nominatedIDs.concat(action.payload.imdbID)});
+            return Object.assign({}, state, 
+                {nominatedMovies: state.nominatedMovies.concat(action.payload),
+                    nominatedIDs: state.nominatedIDs.concat(action.payload.imdbID),
+                    showBanner: state.nominatedIDs.length >= 4
+                });
 
         case REMOVE_NOMINEES:
             return Object.assign({}, state, 
                 {nominatedMovies: state.nominatedMovies.filter(movie => {return movie.imdbID !== action.payload}),
-                    nominatedIDs: state.nominatedIDs.filter(id => {return id !== action.payload})
-                })
+                    nominatedIDs: state.nominatedIDs.filter(id => {return id !== action.payload}),
+                    showBanner: false
+                });
+
+        case CLOSE_BANNER:
+            return Object.assign({}, state, {showBanner: false});
 
         default:
             return state;

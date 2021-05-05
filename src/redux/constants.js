@@ -6,3 +6,4 @@ export const SEARCH_MOVIE_FAIL = 'SEARCH_MOVIE_FAIL';
 
 export const ADD_NOMINEES = 'ADD_NOMINEES';
 export const REMOVE_NOMINEES = 'REMOVE_NOMINEES';
+export const CLOSE_BANNER = 'CLOSE_BANNER'

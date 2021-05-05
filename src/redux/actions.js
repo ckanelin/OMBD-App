@@ -4,7 +4,8 @@ import {
     SEARCH_MOVIE_SUCCESS,
     SEARCH_MOVIE_FAIL,
     ADD_NOMINEES,
-    REMOVE_NOMINEES
+    REMOVE_NOMINEES,
+    CLOSE_BANNER
 } from './constants'
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -41,7 +42,12 @@ export const changeNominated = (e) => (dispatch) => {
 
     if(buttonType === "nominate"){
         dispatch({type: ADD_NOMINEES, payload: nominee})
-    } else {
+    } else if(buttonType === "remove"){
         dispatch({type: REMOVE_NOMINEES, payload: movieID})
     }
 }
+
+export const closeBanner = () => ({
+    type: CLOSE_BANNER
+})
+
