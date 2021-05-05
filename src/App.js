@@ -36,7 +36,7 @@ class App extends Component {
     if(!isPending){
     
       filteredResults = movieResults.map(movie => {
-        if(nominatedIDs.includes(movie.imdbID)){
+        if(nominatedIDs.includes(movie.imdbID) || nominatedIDs.length >= 5){
           movie.isNominated = true;
         }else{
           movie.isNominated = false;
