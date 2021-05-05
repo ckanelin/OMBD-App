@@ -57,7 +57,7 @@ class App extends Component {
             />
           </div>
           <div className='ma2 w-70 flex justify-between'>
-          <MovieList movieList={filteredResults} buttonType={'Nominate'} buttonPress={onClickButton}/>
+            <MovieList movieList={filteredResults} buttonType={'Nominate'} buttonPress={onClickButton}/>
             <MovieList movieList={nominatedMovies} buttonType={'Remove'} buttonPress={onClickButton}/>
           </div>
 
