@@ -4,7 +4,7 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import MovieList from './components/MovieList';
 
-import {setSearchField, requestMovieResults, addNominated} from './redux/actions';
+import {setSearchField, requestMovieResults, changeNominated} from './redux/actions';
 
 const mapStateToProps = state => {
   return{
@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
   return{
     onSearchChange: (e) => dispatch(setSearchField(e.target.value)),
     onRequestMovieResults: (e) => dispatch(requestMovieResults(e, e.target.value)),
-    onClickNominate: (e) => dispatch(addNominated(e))
+    onClickButton: (e) => dispatch(changeNominated(e))
   }
 }
 class App extends Component {
@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   render(){
-    const {onSearchChange, onRequestMovieResults, onClickNominate} = this.props;
+    const {onSearchChange, onRequestMovieResults, onClickButton} = this.props;
     const {isPending, movieResults, nominatedMovies, nominatedIDs} = this.props;
 
     let filteredResults = [];
@@ -57,8 +57,8 @@ class App extends Component {
             />
           </div>
           <div className='ma2 w-70 flex justify-between'>
-          <MovieList movieList={filteredResults} buttonType={'Nominate'} buttonPress={onClickNominate}/>
-            <MovieList movieList={nominatedMovies} buttonType={'Remove'}/>
+          <MovieList movieList={filteredResults} buttonType={'Nominate'} buttonPress={onClickButton}/>
+            <MovieList movieList={nominatedMovies} buttonType={'Remove'} buttonPress={onClickButton}/>
           </div>
 
         </div>

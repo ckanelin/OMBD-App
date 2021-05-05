@@ -27,7 +27,7 @@ export const requestMovieResults = (e,searchField) => (dispatch) => {
     }
 }
 
-export const addNominated = (e) => (dispatch) => {
+export const changeNominated = (e) => (dispatch) => {
     const buttonType = e.target.attributes.buttontype.value.toLowerCase();
     const movieID = e.target.attributes.movieID.value;
     const movieTitle = e.target.attributes.movietitle.value;
@@ -41,9 +41,7 @@ export const addNominated = (e) => (dispatch) => {
 
     if(buttonType === "nominate"){
         dispatch({type: ADD_NOMINEES, payload: nominee})
+    } else {
+        dispatch({type: REMOVE_NOMINEES, payload: movieID})
     }
-    // } else {
-    //     dispatch({type: REMOVE_NOMINEES, payload: movieID})
-    // }
-
 }
