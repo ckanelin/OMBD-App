@@ -58,7 +58,7 @@ export const updateNominated = (state = initialStateNominated, action = {}) => {
         case REMOVE_NOMINEES:
             return Object.assign({}, state, 
                 {nominatedMovies: state.nominatedMovies.filter(movie => {return movie.imdbID !== action.payload}),
-                    nominatedIDs: state.nominatedIDs.filter(id => {return id != action.payload})
+                    nominatedIDs: state.nominatedIDs.filter(id => {return id !== action.payload})
                 })
 
         default:

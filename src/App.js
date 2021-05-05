@@ -31,7 +31,7 @@ class App extends Component {
 
   render(){
     const {onSearchChange, onRequestMovieResults, onClickButton} = this.props;
-    const {isPending, movieResults, nominatedMovies, nominatedIDs} = this.props;
+    const {searchField, isPending, movieResults, nominatedMovies, nominatedIDs} = this.props;
 
     let filteredResults = [];
     if(!isPending){
@@ -50,15 +50,15 @@ class App extends Component {
         <div className='w-100 vh-100 bg-light-gray flex items-center justify-center flex-column'>
           
           <div className='bg-white pa3 ma2 w-70 br2'>
-            <p>Movie Title</p>
+            <h4>Movie Title</h4>
             <SearchBar 
               searchChange={onSearchChange} 
               keyPress={onRequestMovieResults}
             />
           </div>
           <div className='ma2 w-70 flex justify-between'>
-            <MovieList movieList={filteredResults} buttonType={'Nominate'} buttonPress={onClickButton}/>
-            <MovieList movieList={nominatedMovies} buttonType={'Remove'} buttonPress={onClickButton}/>
+            <MovieList title={'Results for ' + searchField} movieList={filteredResults} buttonType={'Nominate'} buttonPress={onClickButton}/>
+            <MovieList title={'Nominated Movies'} movieList={nominatedMovies} buttonType={'Remove'} buttonPress={onClickButton}/>
           </div>
 
         </div>

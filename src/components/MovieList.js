@@ -2,7 +2,7 @@ import React from 'react';
 import BulletPoint from './BulletPoint';
 import './MovieList.css';
 
-const MovieList = ({movieList, buttonType, buttonPress}) => {
+const MovieList = ({title, movieList, buttonType, buttonPress}) => {
 
     const movies = movieList.map(movie => {
    
@@ -19,7 +19,7 @@ const MovieList = ({movieList, buttonType, buttonPress}) => {
 
     return(
         <div className='MovieList pa3 bg-white br2'>
-            <h4>Title</h4>
+            <h4>{title}</h4>
             <ul>
                 {movies}
             </ul>
