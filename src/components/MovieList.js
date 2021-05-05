@@ -2,13 +2,18 @@ import React from 'react';
 import BulletPoint from './BulletPoint';
 import './MovieList.css';
 
-const MovieList = ({movieResults, buttonType}) => {
+const MovieList = ({movieList, buttonType, buttonPress}) => {
 
-    const movies = movieResults.map(movie => {
+    const movies = movieList.map(movie => {
+   
         return <BulletPoint
                     key={movie.imdbID}
-                    movieName={movie.Title}
+                    movieID={movie.imdbID}
+                    movieTitle={movie.Title}
+                    movieYear={movie.Year}
                     buttonType={buttonType}
+                    buttonPress={buttonPress}
+                    isDisabled={movie.isNominated}
                 />
     })
 

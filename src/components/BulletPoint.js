@@ -1,10 +1,20 @@
 import React from 'react';
 
-const BulletPoint = ({id, movieName, buttonType}) => {
+const BulletPoint = ({movieID, movieTitle, movieYear, buttonType, buttonPress, isDisabled}) => {
+
     return(
-        <li key={id}>
-            {movieName}
-            <button className="ma2">{buttonType}</button>
+        <li key={movieID}>
+            {movieTitle+ ' ('+ movieYear + ')'}
+            <button 
+                className="ma2" 
+                buttontype={buttonType}
+                onClick={buttonPress}
+                disabled={isDisabled} 
+                movieid={movieID}
+                movietitle={movieTitle}
+                movieyear={movieYear}>
+                    
+                {buttonType}</button>
         </li>
     );
 }

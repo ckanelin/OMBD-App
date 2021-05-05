@@ -9,10 +9,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'tachyons';
 
-import {updateSearchField, requestMovieResults} from './redux/reducers';
+import {updateSearchField, requestMovieResults, updateNominated} from './redux/reducers';
 
 const logger = createLogger();
-const rootReducers = combineReducers({updateSearchField, requestMovieResults});
+const rootReducers = combineReducers({updateSearchField, requestMovieResults, updateNominated});
 const store = createStore(rootReducers, applyMiddleware(thunkMiddleware, logger));
 
 ReactDOM.render(
