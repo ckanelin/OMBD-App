@@ -1,0 +1,13 @@
+img{
+	width: 136.5px;
+	height: 175px;
+    pointer-events: none;
+}
+
+.clickable{
+    pointer-events: all;
+}
+
+.unclickable{
+    pointer-events: none;
+}

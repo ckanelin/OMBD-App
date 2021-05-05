@@ -1,16 +1,18 @@
 import React from 'react';
-import BulletPoint from './BulletPoint';
+import Card from "./Card";
+import Scroll from "./Scroll";
 import './MovieList.css';
 
 const MovieList = ({title, movieList, buttonType, buttonPress}) => {
 
     const movies = movieList.map(movie => {
    
-        return <BulletPoint
+        return <Card
                     key={movie.imdbID}
                     movieID={movie.imdbID}
                     movieTitle={movie.Title}
                     movieYear={movie.Year}
+                    url={movie.Poster}
                     buttonType={buttonType}
                     buttonPress={buttonPress}
                     isDisabled={movie.isNominated}
@@ -20,9 +22,11 @@ const MovieList = ({title, movieList, buttonType, buttonPress}) => {
     return(
         <div className='MovieList pa3 bg-white br2'>
             <h4>{title}</h4>
-            <ul>
-                {movies}
-            </ul>
+            <Scroll>
+                <div className = 'flex flex-wrap justify-center'> 
+                    {movies}
+                </div>
+            </Scroll>
         </div>
     );
 }

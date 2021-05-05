@@ -25,15 +25,18 @@ export const requestMovieResults = (e,searchField) => (dispatch) => {
 }
 
 export const changeNominated = (e) => (dispatch) => {
+    console.log(e.target);
     const buttonType = e.target.attributes.buttontype.value.toLowerCase();
     const movieID = e.target.attributes.movieID.value;
     const movieTitle = e.target.attributes.movietitle.value;
     const movieYear = e.target.attributes.movieyear.value
+    const moviePoster = e.target.attributes.movieposter.value
     
     const nominee = {
         imdbID:movieID,
         Title: movieTitle,
-        Year: movieYear
+        Year: movieYear,
+        Poster: moviePoster
     }
 
     if(buttonType === "nominate"){
