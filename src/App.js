@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import './App.css';
 import SearchBar from './components/SearchBar';
 import MovieList from './components/MovieList';
 import Modal from './components/Modal';
@@ -46,10 +45,10 @@ class App extends Component {
     }
 
     return (
-        <div className='w-100 vh-100 bg-light-gray flex items-center justify-center flex-column'>
-          
-          <div className='bg-white pa3 ma2 w-70 br2'>
-            <h4>Movie Title</h4>
+        <div className='w-100 vh-100 bg-black flex items-center flex-column'>
+          <h1 className='gold avenir'>The Shoppies</h1>
+          <div className='pl3 pr3 pt1 pb3 ml3 mr3 mb3 mt1 w-70 br1 ba b--gold '>
+            <h4 className='gold'>Movie Title</h4>
             <SearchBar 
               keyPress={onRequestMovieResults}
             />

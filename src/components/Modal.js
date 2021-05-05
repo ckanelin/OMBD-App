@@ -11,9 +11,9 @@ const Modal = ({show, hideModal}) => {
       			<div className='flex justify-end ma2'>
         			<button className='close-window-button' onClick={hideModal}>x</button>
         		</div>
-                <div className='lightest-blue tc ma3'>
-                    You have nominated 5 movies
-                </div>
+                <h3 className= 'gold tc pt2 pb4'>
+                    You have nominated 5 movies!
+                </h3>
       		</section>
     	</div>
     );

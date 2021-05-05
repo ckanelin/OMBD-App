@@ -7,3 +7,6 @@
 - User can see which movies have already been nominated
 - User can remove a nominated film
 - User will be notified when they have selected 5 nominees
+
+## Additional Features
+- User cannot add any more moviest when they have selected 5 nominees

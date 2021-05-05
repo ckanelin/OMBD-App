@@ -4,7 +4,7 @@ const SearchBar = ({searchChange, keyPress}) => {
     return(
         <input
             type='Search'
-            placeholder='Movie Title'
+            placeholder='Search For a Movie'
             className='pa1 br2 w-100'
             onChange={searchChange}
             onKeyDown={keyPress}
