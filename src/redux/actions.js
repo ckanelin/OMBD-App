@@ -10,13 +10,9 @@ import {
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-export const setSearchField = (text) => ({
-    type: CHANGE_SEARCH_FIELD,
-    payload: text
-})
-
 export const requestMovieResults = (e,searchField) => (dispatch) => {
     if(e.keyCode === 13){
+        dispatch({type: CHANGE_SEARCH_FIELD, payload:searchField})
         dispatch({type: SEARCH_MOVIE_PENDING});
 
         fetch('http://www.omdbapi.com/?apikey='+API_KEY+'&s='+searchField)

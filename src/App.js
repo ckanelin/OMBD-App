@@ -5,7 +5,7 @@ import SearchBar from './components/SearchBar';
 import MovieList from './components/MovieList';
 import Modal from './components/Modal';
 
-import {setSearchField, requestMovieResults, changeNominated, closeBanner} from './redux/actions';
+import { requestMovieResults, changeNominated, closeBanner} from './redux/actions';
 
 const mapStateToProps = state => {
   return{
@@ -20,7 +20,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onSearchChange: (e) => dispatch(setSearchField(e.target.value)),
     onRequestMovieResults: (e) => dispatch(requestMovieResults(e, e.target.value)),
     onClickButton: (e) => dispatch(changeNominated(e)),
     onCloseModal: () => dispatch(closeBanner())
@@ -29,7 +28,7 @@ const mapDispatchToProps = (dispatch) => {
 class App extends Component {
 
   render(){
-    const {onSearchChange, onRequestMovieResults, onClickButton, onCloseModal} = this.props;
+    const {onRequestMovieResults, onClickButton, onCloseModal} = this.props;
     const {searchField, isPending, movieResults, nominatedMovies, nominatedIDs, showBanner} = this.props;
     
 
@@ -46,16 +45,12 @@ class App extends Component {
       })
     }
 
-    console.log(showBanner);
-    console.log(nominatedIDs.length);
-
     return (
         <div className='w-100 vh-100 bg-light-gray flex items-center justify-center flex-column'>
           
           <div className='bg-white pa3 ma2 w-70 br2'>
             <h4>Movie Title</h4>
             <SearchBar 
-              searchChange={onSearchChange} 
               keyPress={onRequestMovieResults}
             />
           </div>

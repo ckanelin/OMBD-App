@@ -5,8 +5,6 @@ import './Modal.css'
 const Modal = ({show, hideModal}) => {
 
 	const showHideClassName = show? "modal display-block" : "modal display-none";
-    console.log(showHideClassName);
-
 	return(
 		<div className={showHideClassName}>
       		<section className="modal-main">
