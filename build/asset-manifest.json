@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/OMBD-App/static/css/main.6ef2e38c.chunk.css",
+    "main.js": "/OMBD-App/static/js/main.03486e18.chunk.js",
+    "main.js.map": "/OMBD-App/static/js/main.03486e18.chunk.js.map",
+    "runtime-main.js": "/OMBD-App/static/js/runtime-main.02eb2aa3.js",
+    "runtime-main.js.map": "/OMBD-App/static/js/runtime-main.02eb2aa3.js.map",
+    "static/css/2.fe359a49.chunk.css": "/OMBD-App/static/css/2.fe359a49.chunk.css",
+    "static/js/2.b4563dee.chunk.js": "/OMBD-App/static/js/2.b4563dee.chunk.js",
+    "static/js/2.b4563dee.chunk.js.map": "/OMBD-App/static/js/2.b4563dee.chunk.js.map",
+    "static/js/3.4936ba06.chunk.js": "/OMBD-App/static/js/3.4936ba06.chunk.js",
+    "static/js/3.4936ba06.chunk.js.map": "/OMBD-App/static/js/3.4936ba06.chunk.js.map",
+    "index.html": "/OMBD-App/index.html",
+    "static/css/2.fe359a49.chunk.css.map": "/OMBD-App/static/css/2.fe359a49.chunk.css.map",
+    "static/css/main.6ef2e38c.chunk.css.map": "/OMBD-App/static/css/main.6ef2e38c.chunk.css.map",
+    "static/js/2.b4563dee.chunk.js.LICENSE.txt": "/OMBD-App/static/js/2.b4563dee.chunk.js.LICENSE.txt",
+    "static/media/chuttersnap-8nMjIn195p0-unsplash.017a17cb.jpg": "/OMBD-App/static/media/chuttersnap-8nMjIn195p0-unsplash.017a17cb.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.02eb2aa3.js",
+    "static/css/2.fe359a49.chunk.css",
+    "static/js/2.b4563dee.chunk.js",
+    "static/css/main.6ef2e38c.chunk.css",
+    "static/js/main.03486e18.chunk.js"
+  ]
+}
