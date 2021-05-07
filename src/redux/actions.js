@@ -1,4 +1,5 @@
 import {
+    CLOSE_LANDING,
     CHANGE_SEARCH_FIELD,
     SEARCH_MOVIE_PENDING,
     SEARCH_MOVIE_SUCCESS,
@@ -7,6 +8,10 @@ import {
     REMOVE_NOMINEES,
     CLOSE_BANNER
 } from './constants'
+
+export const changePageState = () => ({
+    type: CLOSE_LANDING
+});
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 

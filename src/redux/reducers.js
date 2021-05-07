@@ -1,4 +1,5 @@
 import {
+    CLOSE_LANDING,
     CHANGE_SEARCH_FIELD,
     SEARCH_MOVIE_PENDING,
     SEARCH_MOVIE_SUCCESS,
@@ -7,6 +8,20 @@ import {
     REMOVE_NOMINEES,
     CLOSE_BANNER
 } from './constants'
+
+const initialPageState ={
+    showLanding: true
+}
+
+export const updatePageState = (state = initialPageState, action = {}) => {
+    switch(action.type){
+        case CLOSE_LANDING:
+            return Object.assign({}, state, {showLanding: false});
+         
+        default:
+            return state;
+    }
+}
 
 const initialSearchState = {
     searchField:''
