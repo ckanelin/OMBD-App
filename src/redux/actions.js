@@ -20,7 +20,7 @@ export const requestMovieResults = (e,searchField) => (dispatch) => {
         dispatch({type: CHANGE_SEARCH_FIELD, payload:searchField})
         dispatch({type: SEARCH_MOVIE_PENDING});
 
-        fetch('http://www.omdbapi.com/?apikey='+API_KEY+'&s='+searchField)
+        fetch('https://www.omdbapi.com/?apikey='+API_KEY+'&s='+searchField)
             .then(response => response.json())
             .then(data => {
                 dispatch ({type: SEARCH_MOVIE_SUCCESS, payload: data})
