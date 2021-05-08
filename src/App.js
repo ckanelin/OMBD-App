@@ -14,6 +14,7 @@ const mapStateToProps = state => {
     searchField: state.updateSearchField.searchField,
     isPending: state.requestMovieResults.isPending,
     movieResults: state.requestMovieResults.movieResults,
+    error: state.requestMovieResults.error ,
     nominatedMovies: state.updateNominated.nominatedMovies,
     nominatedIDs: state.updateNominated.nominatedIDs,
     showBanner: state.updateNominated.showBanner
@@ -32,10 +33,16 @@ class App extends Component {
 
   render(){
     const {onCloseLanding, onRequestMovieResults, onClickButton, onCloseModal} = this.props;
-    const {showLanding, searchField, isPending, movieResults, nominatedMovies, nominatedIDs, showBanner} = this.props;
+    const {showLanding, searchField,  movieResults, error, nominatedMovies, nominatedIDs, showBanner} = this.props;
     
     let filteredResults = [];
-    if(!isPending){
+    let errorMessage = "";
+
+    if(error !== ""){
+      errorMessage = "(**Input is too short)";
+    }
+
+    if(movieResults){
     
       filteredResults = movieResults.map(movie => {
         if(nominatedIDs.includes(movie.imdbID) || nominatedIDs.length >= 5){
@@ -65,7 +72,7 @@ class App extends Component {
         <div className='w-100 vh-100 bg-black flex items-center flex-column'>
           <h1 className='gold avenir fade-in'>The Shoppies</h1>
           <div className='pl3 pr3 pt1 pb3 ml3 mr3 mb3 mt1 w-70 br1 ba b--gold fade-in'>
-            <h4 className='gold'>Movie Title</h4>
+            <h4 className='gold'>Movie Title {errorMessage}</h4>
             <SearchBar 
               keyPress={onRequestMovieResults}
             />

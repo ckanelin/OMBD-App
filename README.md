@@ -19,8 +19,10 @@
 - The state management was implemented with Redux
 - Black accented with gold was chosen to give a classical movie award theme
 - Movies are listed in a card format with their posters to allow for easy browsing
+- An environment variable was used to hide the API key
 
 ## Future Considerations
+- Consideration of various screen sizes
 - Made to be mobile friendly
 - User authentication
 - Data persistence

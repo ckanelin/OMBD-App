@@ -23,9 +23,16 @@ export const requestMovieResults = (e,searchField) => (dispatch) => {
         fetch('https://www.omdbapi.com/?apikey='+API_KEY+'&s='+searchField)
             .then(response => response.json())
             .then(data => {
-                dispatch ({type: SEARCH_MOVIE_SUCCESS, payload: data})
+                console.log(data.Response);
+                if(data.Response === 'True'){
+                    dispatch ({type: SEARCH_MOVIE_SUCCESS, payload: data})
+                }else{
+                    dispatch ({type: SEARCH_MOVIE_FAIL, payload: data.Error});
+                }
             })
-            .catch(error => dispatch ({type: SEARCH_MOVIE_FAIL, payload: error}))
+            .catch(error => {
+                dispatch ({type: SEARCH_MOVIE_FAIL, payload: error});
+            })
     }
 }
 

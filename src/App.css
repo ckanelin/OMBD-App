@@ -21,16 +21,16 @@
 }
 
 .fade-in {
-    animation: fadein 3s ease-in;
+    animation: fadein 2s ease-in;
 }
 
 .fade-in-delay{
-    animation: fadeindelay 6s ease-in;
+    animation: fadeindelay 4s ease-in;
 }
 
 
 .bounce-fade{
-    animation: bounce 4s;
+    animation: bounce 2s;
 }
 
 @keyframes fadein {

@@ -50,10 +50,10 @@ export const requestMovieResults = (state = initialStateMovieResults, action = {
             return Object.assign({}, state, {isPending: true});
         
         case SEARCH_MOVIE_SUCCESS:
-                return Object.assign({}, state, {movieResults: action.payload.Search, isPending: false});
+                return Object.assign({}, state, {movieResults: action.payload.Search, isPending: false, error:""});
 
         case SEARCH_MOVIE_FAIL:
-            return Object.assign({}, state, {error: action.payload, isPending: false});
+            return Object.assign({}, state, {movieResults:[], isPending: false, error: action.payload.Error});
     
         default:
             return state;
