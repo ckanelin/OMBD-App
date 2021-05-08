@@ -19,3 +19,8 @@
 - The state management was implemented with Redux
 - Black accented with gold was chosen to give a classical movie award theme
 - Movies are listed in a card format with their posters to allow for easy browsing
+
+## Future Considerations
+- Made to be mobile friendly
+- User authentication
+- Data persistence
