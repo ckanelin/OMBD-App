@@ -57,8 +57,8 @@ class App extends Component {
       return(
         <div className='bg-black'>
           <img src={bgImage} alt='background' className='vh-100 w-100 fade-in'/>
-          <h1 className='white pos-one fade-in'>Award Of The Year</h1>
-          <div className=' gold pos-two bounce-fade pl1 pr1'>The Shoppies</div>
+          <h1 className='white pos-one fade-in cursive'>Award Of The Year</h1>
+          <div className=' gold pos-two bounce-fade pl1 pr1 cursive'>The Shoppies</div>
           <button 
             onClick={onCloseLanding} 
             className='pos-three fade-in-delay ba b--white bg-black white pl3 pr3 pt2 pb2 grow'>
@@ -70,16 +70,16 @@ class App extends Component {
 
       return (
         <div className='w-100 vh-100 bg-black flex items-center flex-column'>
-          <h1 className='gold avenir fade-in'>The Shoppies</h1>
-          <div className='pl3 pr3 pt1 pb3 ml3 mr3 mb3 mt1 w-70 br1 ba b--gold fade-in'>
-            <h4 className='gold'>Movie Title {errorMessage}</h4>
+          <h1 className='yellow fade-in cursive'>The Shoppies</h1>
+          <div className='pl3 pr3 pt1 pb3 ml3 mr3 mb3 mt1 w-70 br1 ba b--yellow fade-in'>
+            <h4 className='yellow'>Movie Title {errorMessage}</h4>
             <SearchBar 
               keyPress={onRequestMovieResults}
             />
           </div>  
           <div className='ma2 w-70 flex justify-between fade-in'>
             <MovieList 
-              title={'Results for ' + searchField} 
+              title={'Results for "' + searchField+'"'} 
               movieList={filteredResults} 
               buttonType={'Nominate'} 
               buttonPress={onClickButton}/>

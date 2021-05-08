@@ -3,7 +3,6 @@
     font-size: 60px;
     top: 25%;
     left: 12%;
-    font-family: "Brush Script MT", cursive;
 }
 
 .pos-two{
@@ -11,7 +10,6 @@
     font-size: 40px;
     top: 40%;
     left: 18%;
-    font-family: "Brush Script MT", cursive;
 }
 
 .pos-three{
@@ -31,6 +29,10 @@
 
 .bounce-fade{
     animation: bounce 2s;
+}
+
+.cursive{
+    font-family: "Brush Script MT", cursive;
 }
 
 @keyframes fadein {

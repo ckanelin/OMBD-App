@@ -20,8 +20,8 @@ const MovieList = ({title, movieList, buttonType, buttonPress}) => {
     })
 
     return(
-        <div className='MovieList pa3 br1 ba b--gold'>
-            <h4 className='gold'>{title}</h4>
+        <div className='MovieList pa3 br1 ba b--yellow'>
+            <h4 className='yellow'>{title}</h4>
             <Scroll>
                 <div className = 'flex flex-wrap justify-center'> 
                     {movies}

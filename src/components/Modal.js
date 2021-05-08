@@ -8,10 +8,10 @@ const Modal = ({show, hideModal}) => {
 	return(
 		<div className={showHideClassName}>
       		<section className="modal-main">
-      			<div className='flex justify-end ma2'>
-        			<button className='close-window-button' onClick={hideModal}>x</button>
+      			<div className='flex tc'>
+					<div class="close pa2" onClick={hideModal}></div>
         		</div>
-                <h3 className= 'gold tc pt2 pb4'>
+                <h3 className= 'yellow tc pt2 pb4'>
                     You have nominated 5 movies!
                 </h3>
       		</section>
