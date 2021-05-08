@@ -1,6 +1,5 @@
 {
   "name": "shopify_challenge",
-  "homepage":"https://ckanelin.github.io/OMBD-App/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
